@@ -5,3 +5,4 @@ numpy
 pyautogui
 Pillow
 keyboard
+security==1.3.1
