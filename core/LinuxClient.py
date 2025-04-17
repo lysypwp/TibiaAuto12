@@ -1,10 +1,11 @@
 import subprocess
+from security import safe_command
 
 CLIENT_IDENTIFIER = "T" + "ib" + "ia - "
 
 
 def Execute(cmd):
-    output, _ = subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()
+    output, _ = safe_command.run(subprocess.Popen, cmd, stdout=subprocess.PIPE).communicate()
 
     return output.decode("utf8")
 
